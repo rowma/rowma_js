@@ -1,0 +1,176 @@
+[
+  {
+    "name": "Rowma#registerDevice",
+    "filePath": "src/rowma.js",
+    "lines": [
+      {
+        "lineNumber": 73,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 74,
+        "line": "   * Match the UUID of a device client and a UUID of the robot on ConnectionManager."
+      },
+      {
+        "lineNumber": 75,
+        "line": "   * @param {socket} socket"
+      },
+      {
+        "lineNumber": 76,
+        "line": "   * @param {string} RobotUUID"
+      },
+      {
+        "lineNumber": 77,
+        "line": "   * @return {Promise} Return a Promise with a response."
+      },
+      {
+        "lineNumber": 78,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 79,
+        "line": "  registerDevice(socket, robotUuid) {"
+      }
+    ],
+    "codeParams": [
+      "socket",
+      "robotUuid"
+    ],
+    "docParams": [
+      "socket",
+      "RobotUUID"
+    ]
+  },
+  {
+    "name": "Rowma#connect",
+    "filePath": "src/rowma.js",
+    "lines": [
+      {
+        "lineNumber": 85,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 86,
+        "line": "   * Connect to ConnectionManager."
+      },
+      {
+        "lineNumber": 87,
+        "line": "   * @param {string} RobotUUID"
+      },
+      {
+        "lineNumber": 88,
+        "line": "   * @return {Promise} Return a Promise with a socket for connection."
+      },
+      {
+        "lineNumber": 89,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 90,
+        "line": "  connect(robotUuid) {"
+      }
+    ],
+    "codeParams": [
+      "robotUuid"
+    ],
+    "docParams": [
+      "RobotUUID"
+    ]
+  },
+  {
+    "name": "Rowma#publishTopic",
+    "filePath": "src/rowma.js",
+    "lines": [
+      {
+        "lineNumber": 111,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 112,
+        "line": "   * Publish a topic which runs on the specified robot."
+      },
+      {
+        "lineNumber": 113,
+        "line": "   * @param {socket} socket"
+      },
+      {
+        "lineNumber": 114,
+        "line": "   * @param {string} RobotUUID"
+      },
+      {
+        "lineNumber": 115,
+        "line": "   * @param {string} msg Message for topic"
+      },
+      {
+        "lineNumber": 116,
+        "line": "   * @return {Promise} Return a Promise with a response."
+      },
+      {
+        "lineNumber": 117,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 118,
+        "line": "  publishTopic(socket, robotUuid, msg) {"
+      }
+    ],
+    "codeParams": [
+      "socket",
+      "robotUuid",
+      "msg"
+    ],
+    "docParams": [
+      "socket",
+      "RobotUUID",
+      "msg"
+    ]
+  },
+  {
+    "name": "Rowma#subscribeTopic",
+    "filePath": "src/rowma.js",
+    "lines": [
+      {
+        "lineNumber": 124,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 125,
+        "line": "   * Subscribe a topic."
+      },
+      {
+        "lineNumber": 126,
+        "line": "   * @param {socket} socket"
+      },
+      {
+        "lineNumber": 127,
+        "line": "   * @param {string} RobotUUID"
+      },
+      {
+        "lineNumber": 128,
+        "line": "   * @param {string} topic"
+      },
+      {
+        "lineNumber": 129,
+        "line": "   * @return {Promise} Return a Promise with a response."
+      },
+      {
+        "lineNumber": 130,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 131,
+        "line": "  subscribeTopic(socket, robotUuid, topic) {"
+      }
+    ],
+    "codeParams": [
+      "socket",
+      "robotUuid",
+      "topic"
+    ],
+    "docParams": [
+      "socket",
+      "RobotUUID",
+      "topic"
+    ]
+  }
+]

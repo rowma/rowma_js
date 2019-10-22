@@ -1,0 +1,1173 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/geolocation.js",
+    "content": "import axios from 'axios';\nimport geohash from 'ngeohash';\n\nconst getGeohash = async (precision = 6) => {\n  const options = {\n    method: 'GET',\n    hostname: 'freegeoip.app',\n    port: null,\n    path: '/json/',\n    headers: {\n      accept: 'application/json',\n      'content-type': 'application/json'\n    }\n  };\n  const result = await axios.get('https://freegeoip.app/json/', options)\n    .then(res => res.data);\n  console.log(geohash.encode(result.latitude, result.longitude));\n  return geohash.encode(result.latitude, result.longitude).slice(0, precision);\n};\n\nexport default getGeohash;\n",
+    "static": true,
+    "longname": "/home/asmsuechan/src/asmsuechan/rowma_js/src/geolocation.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "getGeohash",
+    "memberof": "src/geolocation.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/geolocation.js~getGeohash",
+    "access": "public",
+    "export": true,
+    "importPath": "rowma_js/src/geolocation.js",
+    "importStyle": "getGeohash",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "params": [
+      {
+        "name": "precision",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 6,
+        "defaultValue": "6"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "import getGeohash from './geolocation';\nimport Rowma from './rowma';\n\nexport default Rowma;\nexport { getGeohash };\n",
+    "static": true,
+    "longname": "/home/asmsuechan/src/asmsuechan/rowma_js/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 51,
+    "kind": "file",
+    "name": "src/rowma.js",
+    "content": "import axios from 'axios';\nimport io from 'socket.io-client';\nimport uuidv4 from 'uuid/v4';\n\nclass Rowma {\n  constructor(geocode, opts = {}) {\n    this.geocode = geocode;\n\n    this.baseURL = opts.baseURL || 'http://18.176.1.219';\n    this.client = axios.create({\n      baseURL: this.baseURL,\n      timeout: 1000\n    });\n    this.uuid = uuidv4();\n  }\n\n  currentConnectionList() {\n    const path = '/list_connections';\n    const params = { geocode: this.geocode };\n    return this.client.get(path, { params });\n  }\n\n  /**\n   * Get the robot status by UUID from ConnectionManager.\n   * @param {string} uuid\n   * @return {Promise} Return an axios object\n   */\n  getRobotStatus(uuid) {\n    const path = '/robots';\n    const params = { uuid };\n    return this.client.get(path, { params });\n  }\n\n  /**\n   * Run the specified roslaunch command (e.g. my_utility rviz.launch) on the robot.\n   * @param {socket} socket\n   * @param {string} uuid\n   * @param {string} command\n   * @return {Promise} Return a Promise with a response.\n   */\n  runLaunch(socket, uuid, command) {\n    return new Promise((resolve, reject) => {\n      socket.emit('run_launch', { uuid, command }, (res) => resolve(res));\n    });\n  }\n\n  /**\n   * Run the specified rosrun command (e.g. rviz rviz) on the robot.\n   * @param {socket} socket\n   * @param {string} uuid\n   * @param {string} command\n   * @param {string} args Command arguments for the rosrun command.\n   * @return {Promise} Return a Promise with a response.\n   */\n  runRosrun(socket, uuid, command, args) {\n    return new Promise((resolve, reject) => {\n      socket.emit('run_rosrun', { uuid, command, args}, (res) => resolve(res));\n    });\n  }\n\n  /**\n   * Kill the specified ros node running on the robot.\n   * @param {socket} socket\n   * @param {string} uuid\n   * @param {Array<string>} rosnodes\n   * @return {Promise} Return a Promise with a response.\n   */\n  killNodes(socket, uuid, rosnodes) {\n    return new Promise((resolve, reject) => {\n      socket.emit('kill_rosnodes', { uuid, rosnodes }, (res) => resolve(res));\n    })\n  }\n\n  /**\n   * Match the UUID of a device client and a UUID of the robot on ConnectionManager.\n   * @param {socket} socket\n   * @param {string} RobotUUID\n   * @return {Promise} Return a Promise with a response.\n   */\n  registerDevice(socket, robotUuid) {\n    return new Promise((resolve, reject) => {\n      socket.emit('register_device', { deviceUuid: this.uuid, robotUuid }, (res) => resolve(res));\n    });\n  }\n\n  /**\n   * Connect to ConnectionManager.\n   * @param {string} RobotUUID\n   * @return {Promise} Return a Promise with a socket for connection.\n   */\n  connect(robotUuid) {\n    return new Promise((resolve, reject) => {\n      try {\n        const socket = io.connect(`${this.baseURL}/conn_device`);\n        this.registerDevice(socket, robotUuid).then(res => {\n          console.log(res)\n        }).catch(e => {\n          console.log('error', e)\n        });\n\n        resolve(socket);\n      } catch (e) {\n        reject(e);\n      }\n    });\n  }\n\n  close(socket) {\n    socket.close();\n  }\n\n  /**\n   * Publish a topic which runs on the specified robot.\n   * @param {socket} socket\n   * @param {string} RobotUUID\n   * @param {string} msg Message for topic\n   * @return {Promise} Return a Promise with a response.\n   */\n  publishTopic(socket, robotUuid, msg) {\n    return new Promise((resolve, reject) => {\n      socket.emit('delegate', { robotUuid, msg }, (res) => resolve(res));\n    })\n  }\n\n  /**\n   * Subscribe a topic.\n   * @param {socket} socket\n   * @param {string} RobotUUID\n   * @param {string} topic\n   * @return {Promise} Return a Promise with a response.\n   */\n  subscribeTopic(socket, robotUuid, topic) {\n    // TODO: Make msg JSON string\n    const msg =  {\n      \"op\": \"subscribe\",\n      \"deviceUuid\": this.uuid,\n      \"topic\": topic\n    }\n\n    return new Promise((resolve, reject) => {\n      socket.emit('delegate', { robotUuid, msg }, (res) => resolve(res));\n    })\n  }\n}\n\nexport default Rowma;\n",
+    "static": true,
+    "longname": "/home/asmsuechan/src/asmsuechan/rowma_js/src/rowma.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "class",
+    "name": "Rowma",
+    "memberof": "src/rowma.js",
+    "static": true,
+    "longname": "src/rowma.js~Rowma",
+    "access": "public",
+    "export": true,
+    "importPath": "rowma_js/src/rowma.js",
+    "importStyle": "Rowma",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 53,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "geocode",
+    "memberof": "src/rowma.js~Rowma",
+    "static": false,
+    "longname": "src/rowma.js~Rowma#geocode",
+    "access": "public",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "baseURL",
+    "memberof": "src/rowma.js~Rowma",
+    "static": false,
+    "longname": "src/rowma.js~Rowma#baseURL",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "client",
+    "memberof": "src/rowma.js~Rowma",
+    "static": false,
+    "longname": "src/rowma.js~Rowma#client",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "uuid",
+    "memberof": "src/rowma.js~Rowma",
+    "static": false,
+    "longname": "src/rowma.js~Rowma#uuid",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "currentConnectionList",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#currentConnectionList",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "getRobotStatus",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#getRobotStatus",
+    "access": "public",
+    "description": "Get the robot status by UUID from ConnectionManager.",
+    "lineNumber": 28,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "uuid",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "Return an axios object"
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "runLaunch",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#runLaunch",
+    "access": "public",
+    "description": "Run the specified roslaunch command (e.g. my_utility rviz.launch) on the robot.",
+    "lineNumber": 41,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "socket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "uuid",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "command",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "Return a Promise with a response."
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "runRosrun",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#runRosrun",
+    "access": "public",
+    "description": "Run the specified rosrun command (e.g. rviz rviz) on the robot.",
+    "lineNumber": 55,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "socket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "uuid",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "command",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "args",
+        "description": "Command arguments for the rosrun command."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "Return a Promise with a response."
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "killNodes",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#killNodes",
+    "access": "public",
+    "description": "Kill the specified ros node running on the robot.",
+    "lineNumber": 68,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "socket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "uuid",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array<string>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "rosnodes",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "Return a Promise with a response."
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "registerDevice",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#registerDevice",
+    "access": "public",
+    "description": "Match the UUID of a device client and a UUID of the robot on ConnectionManager.",
+    "lineNumber": 80,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "socket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "RobotUUID",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "Return a Promise with a response."
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "connect",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#connect",
+    "access": "public",
+    "description": "Connect to ConnectionManager.",
+    "lineNumber": 91,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "RobotUUID",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "Return a Promise with a socket for connection."
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "close",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#close",
+    "access": "public",
+    "description": null,
+    "lineNumber": 108,
+    "undocument": true,
+    "params": [
+      {
+        "name": "socket",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "publishTopic",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#publishTopic",
+    "access": "public",
+    "description": "Publish a topic which runs on the specified robot.",
+    "lineNumber": 119,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "socket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "RobotUUID",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "msg",
+        "description": "Message for topic"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "Return a Promise with a response."
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "subscribeTopic",
+    "memberof": "src/rowma.js~Rowma",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rowma.js~Rowma#subscribeTopic",
+    "access": "public",
+    "description": "Subscribe a topic.",
+    "lineNumber": 132,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "socket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "RobotUUID",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "topic",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "Return a Promise with a response."
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# Rowma client js\nThis package is a nodejs client for rowma.\n\n# Installation\n```\n$ npm install rowma_js\n```\n\n# Example\n```nodejs\nimport Rowma, { getGeohash } from 'rowma_js';\n\nconst geohash = await getGeohash();\nconst rowma = new Rowma(geohash);\nlet connectionList = []\nrowma.currentConnectionList().then(res => {\n  connectionList = res.data\n})\nconst connection = connectionList[0] // Choose a connection\nconst uuid = connection.uuid\nconst commands = connection.launchCommands\nconst command = commands[0] // Choose a command\nrowma.runLaunch(connectionUuid, command)\n```\n\n# Methods API\n## constructor(geohash, options = {})\n```nodejs\nconst rowma = new Rowma('geohash')\n```\n\n#### Parameters\n|Name|Type|Required|Description|\n|:-|:-|:-|:-|\n|geohash|string|true|A geohash to specify the user|\n|options|Object|false||\n\n#### Returns\nA Rowma object\n\n## currentConnectionList()\nGet a list of connection list.\n\n#### Parameters\nNo parameters\n\n#### Returns\nAn axios response object is returned.\n\n## runLaunch(uuid, command)\nSend a WebSocket request to the connection manager with uuid and command.\n\n#### Parameters\n|Name|Type|Required|Description|\n|:-|:-|:-|:-|\n|uuid|string|true||\n|command|string|true||\n\n#### Returns\nNo return values\n\n## getGeohash()\nGet the geohash of current location from its IP address by freegeoip.app.\n\n#### Parameters\n|Name|Type|Required|Description|\n|:-|:-|:-|:-|\n|precision|number|false|The number of geohash characters|\n\n#### Returns\nA geohash string is returned.\n\n# License\nMIT © asmsuechan\n",
+    "longname": "/home/asmsuechan/src/asmsuechan/rowma_js/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"rowma_js\",\n  \"version\": \"1.0.1\",\n  \"description\": \"ROS Web Manager for JS\",\n  \"main\": \"./lib/index.js\",\n  \"scripts\": {\n    \"clean\": \"rimraf lib\",\n    \"test\": \"npm run lint && npm run cover\",\n    \"test:prod\": \"cross-env BABEL_ENV=production npm run test\",\n    \"test:only\": \"mocha --require babel-core/register --require babel-polyfill --recursive\",\n    \"test:watch\": \"npm test -- --watch\",\n    \"test:examples\": \"node examples/\",\n    \"cover\": \"nyc --check-coverage npm run test:only\",\n    \"lint\": \"eslint src test\",\n    \"build\": \"cross-env BABEL_ENV=production babel src --out-dir lib\",\n    \"prepublish\": \"npm run clean && npm run lint && npm run test && npm run build\"\n  },\n  \"files\": [\n    \"lib\",\n    \"src\"\n  ],\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/asmsuechan/rowma.git\"\n  },\n  \"keywords\": [\n    \"boilerplate\",\n    \"npm\",\n    \"module\",\n    \"node\",\n    \"javascript\"\n  ],\n  \"author\": \"asmsuechan <suenagaryoutaabc@gmail.com>\",\n  \"license\": \"mit\",\n  \"bugs\": {\n    \"url\": \"https://github.com/asmsuechan/rowma/issues\"\n  },\n  \"homepage\": \"https://github.com/asmsuechan/rowma\",\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.26.0\",\n    \"babel-eslint\": \"^10.0.1\",\n    \"babel-plugin-add-module-exports\": \"^1.0.0\",\n    \"babel-polyfill\": \"^6.26.0\",\n    \"babel-preset-env\": \"^1.6.1\",\n    \"babel-preset-minify\": \"^0.5.0\",\n    \"chai\": \"^4.1.2\",\n    \"cross-env\": \"^5.1.3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.16.0\",\n    \"eslint-config-airbnb\": \"^17.1.0\",\n    \"eslint-plugin-import\": \"^2.7.0\",\n    \"eslint-plugin-jsx-a11y\": \"^6.0.2\",\n    \"eslint-plugin-react\": \"^7.4.0\",\n    \"mocha\": \"^6.1.3\",\n    \"nyc\": \"^13.3.0\",\n    \"rimraf\": \"^2.6.2\"\n  },\n  \"dependencies\": {\n    \"axios\": \"^0.19.0\",\n    \"ngeohash\": \"^0.6.3\",\n    \"socket.io-client\": \"^2.2.0\",\n    \"uuid\": \"^3.3.3\"\n  }\n}\n",
+    "longname": "/home/asmsuechan/src/asmsuechan/rowma_js/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

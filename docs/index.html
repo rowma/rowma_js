@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | rowma_js</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="ROS Web Manager for JS"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="rowma_js"><meta property="twitter:description" content="ROS Web Manager for JS"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/asmsuechan/rowma"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rowma.js~Rowma.html">Rowma</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getGeohash">getGeohash</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="rowma-client-js">Rowma client js</h1><p>This package is a nodejs client for rowma.</p>
+<h1 id="installation">Installation</h1><pre><code><code class="source-code prettyprint">$ npm install rowma_js</code>
+</code></pre><h1 id="example">Example</h1><pre><code class="lang-nodejs"><code class="source-code prettyprint">import Rowma, { getGeohash } from &apos;rowma_js&apos;;
+
+const geohash = await getGeohash();
+const rowma = new Rowma(geohash);
+let connectionList = []
+rowma.currentConnectionList().then(res =&gt; {
+  connectionList = res.data
+})
+const connection = connectionList[0] // Choose a connection
+const uuid = connection.uuid
+const commands = connection.launchCommands
+const command = commands[0] // Choose a command
+rowma.runLaunch(connectionUuid, command)</code>
+</code></pre>
+<h1 id="methods-api">Methods API</h1><h2 id="constructor-geohash--options------">constructor(geohash, options = {})</h2><pre><code class="lang-nodejs"><code class="source-code prettyprint">const rowma = new Rowma(&apos;geohash&apos;)</code>
+</code></pre>
+<h4 id="parameters">Parameters</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Required</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">geohash</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">A geohash to specify the user</td>
+</tr>
+<tr>
+<td style="text-align:left">options</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">false</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns">Returns</h4><p>A Rowma object</p>
+<h2 id="currentconnectionlist--">currentConnectionList()</h2><p>Get a list of connection list.</p>
+<h4 id="parameters">Parameters</h4><p>No parameters</p>
+<h4 id="returns">Returns</h4><p>An axios response object is returned.</p>
+<h2 id="runlaunch-uuid--command-">runLaunch(uuid, command)</h2><p>Send a WebSocket request to the connection manager with uuid and command.</p>
+<h4 id="parameters">Parameters</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Required</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">uuid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">command</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">true</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns">Returns</h4><p>No return values</p>
+<h2 id="getgeohash--">getGeohash()</h2><p>Get the geohash of current location from its IP address by freegeoip.app.</p>
+<h4 id="parameters">Parameters</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Required</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">precision</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">The number of geohash characters</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns">Returns</h4><p>A geohash string is returned.</p>
+<h1 id="license">License</h1><p>MIT &#xA9; asmsuechan</p>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

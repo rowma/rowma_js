@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/rowma.js | rowma_js</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="ROS Web Manager for JS"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="rowma_js"><meta property="twitter:description" content="ROS Web Manager for JS"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/asmsuechan/rowma"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rowma.js~Rowma.html">Rowma</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getGeohash">getGeohash</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/rowma.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import axios from &apos;axios&apos;;
+import io from &apos;socket.io-client&apos;;
+import uuidv4 from &apos;uuid/v4&apos;;
+
+class Rowma {
+  constructor(geocode, opts = {}) {
+    this.geocode = geocode;
+
+    this.baseURL = opts.baseURL || &apos;http://18.176.1.219&apos;;
+    this.client = axios.create({
+      baseURL: this.baseURL,
+      timeout: 1000
+    });
+    this.uuid = uuidv4();
+  }
+
+  currentConnectionList() {
+    const path = &apos;/list_connections&apos;;
+    const params = { geocode: this.geocode };
+    return this.client.get(path, { params });
+  }
+
+  /**
+   * Get the robot status by UUID from ConnectionManager.
+   * @param {string} uuid
+   * @return {Promise} Return an axios object
+   */
+  getRobotStatus(uuid) {
+    const path = &apos;/robots&apos;;
+    const params = { uuid };
+    return this.client.get(path, { params });
+  }
+
+  /**
+   * Run the specified roslaunch command (e.g. my_utility rviz.launch) on the robot.
+   * @param {socket} socket
+   * @param {string} uuid
+   * @param {string} command
+   * @return {Promise} Return a Promise with a response.
+   */
+  runLaunch(socket, uuid, command) {
+    return new Promise((resolve, reject) =&gt; {
+      socket.emit(&apos;run_launch&apos;, { uuid, command }, (res) =&gt; resolve(res));
+    });
+  }
+
+  /**
+   * Run the specified rosrun command (e.g. rviz rviz) on the robot.
+   * @param {socket} socket
+   * @param {string} uuid
+   * @param {string} command
+   * @param {string} args Command arguments for the rosrun command.
+   * @return {Promise} Return a Promise with a response.
+   */
+  runRosrun(socket, uuid, command, args) {
+    return new Promise((resolve, reject) =&gt; {
+      socket.emit(&apos;run_rosrun&apos;, { uuid, command, args}, (res) =&gt; resolve(res));
+    });
+  }
+
+  /**
+   * Kill the specified ros node running on the robot.
+   * @param {socket} socket
+   * @param {string} uuid
+   * @param {Array&lt;string&gt;} rosnodes
+   * @return {Promise} Return a Promise with a response.
+   */
+  killNodes(socket, uuid, rosnodes) {
+    return new Promise((resolve, reject) =&gt; {
+      socket.emit(&apos;kill_rosnodes&apos;, { uuid, rosnodes }, (res) =&gt; resolve(res));
+    })
+  }
+
+  /**
+   * Match the UUID of a device client and a UUID of the robot on ConnectionManager.
+   * @param {socket} socket
+   * @param {string} RobotUUID
+   * @return {Promise} Return a Promise with a response.
+   */
+  registerDevice(socket, robotUuid) {
+    return new Promise((resolve, reject) =&gt; {
+      socket.emit(&apos;register_device&apos;, { deviceUuid: this.uuid, robotUuid }, (res) =&gt; resolve(res));
+    });
+  }
+
+  /**
+   * Connect to ConnectionManager.
+   * @param {string} RobotUUID
+   * @return {Promise} Return a Promise with a socket for connection.
+   */
+  connect(robotUuid) {
+    return new Promise((resolve, reject) =&gt; {
+      try {
+        const socket = io.connect(`${this.baseURL}/conn_device`);
+        this.registerDevice(socket, robotUuid).then(res =&gt; {
+          console.log(res)
+        }).catch(e =&gt; {
+          console.log(&apos;error&apos;, e)
+        });
+
+        resolve(socket);
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
+  close(socket) {
+    socket.close();
+  }
+
+  /**
+   * Publish a topic which runs on the specified robot.
+   * @param {socket} socket
+   * @param {string} RobotUUID
+   * @param {string} msg Message for topic
+   * @return {Promise} Return a Promise with a response.
+   */
+  publishTopic(socket, robotUuid, msg) {
+    return new Promise((resolve, reject) =&gt; {
+      socket.emit(&apos;delegate&apos;, { robotUuid, msg }, (res) =&gt; resolve(res));
+    })
+  }
+
+  /**
+   * Subscribe a topic.
+   * @param {socket} socket
+   * @param {string} RobotUUID
+   * @param {string} topic
+   * @return {Promise} Return a Promise with a response.
+   */
+  subscribeTopic(socket, robotUuid, topic) {
+    // TODO: Make msg JSON string
+    const msg =  {
+      &quot;op&quot;: &quot;subscribe&quot;,
+      &quot;deviceUuid&quot;: this.uuid,
+      &quot;topic&quot;: topic
+    }
+
+    return new Promise((resolve, reject) =&gt; {
+      socket.emit(&apos;delegate&apos;, { robotUuid, msg }, (res) =&gt; resolve(res));
+    })
+  }
+}
+
+export default Rowma;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
