@@ -3,9 +3,7 @@ import io from 'socket.io-client';
 import uuidv4 from 'uuid/v4';
 
 class Rowma {
-  constructor(geocode, opts = {}) {
-    this.geocode = geocode;
-
+  constructor(opts = {}) {
     this.baseURL = opts.baseURL || 'http://18.176.1.219';
     this.client = axios.create({
       baseURL: this.baseURL,
@@ -16,8 +14,7 @@ class Rowma {
 
   currentConnectionList() {
     const path = '/list_connections';
-    const params = { geocode: this.geocode };
-    return this.client.get(path, { params });
+    return this.client.get(path);
   }
 
   /**
