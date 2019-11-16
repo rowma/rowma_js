@@ -30,7 +30,6 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rowma.js~Rowma.html">Rowma</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getGeohash">getGeohash</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -41,9 +40,7 @@ import io from &apos;socket.io-client&apos;;
 import uuidv4 from &apos;uuid/v4&apos;;
 
 class Rowma {
-  constructor(geocode, opts = {}) {
-    this.geocode = geocode;
-
+  constructor(opts = {}) {
     this.baseURL = opts.baseURL || &apos;http://18.176.1.219&apos;;
     this.client = axios.create({
       baseURL: this.baseURL,
@@ -54,8 +51,7 @@ class Rowma {
 
   currentConnectionList() {
     const path = &apos;/list_connections&apos;;
-    const params = { geocode: this.geocode };
-    return this.client.get(path, { params });
+    return this.client.get(path);
   }
 
   /**
@@ -77,8 +73,8 @@ class Rowma {
    * @return {Promise} Return a Promise with a response.
    */
   runLaunch(socket, uuid, command) {
-    return new Promise((resolve, reject) =&gt; {
-      socket.emit(&apos;run_launch&apos;, { uuid, command }, (res) =&gt; resolve(res));
+    return new Promise((resolve) =&gt; {
+      socket.emit(&apos;run_launch&apos;, { uuid, command }, res =&gt; resolve(res));
     });
   }
 
@@ -91,8 +87,8 @@ class Rowma {
    * @return {Promise} Return a Promise with a response.
    */
   runRosrun(socket, uuid, command, args) {
-    return new Promise((resolve, reject) =&gt; {
-      socket.emit(&apos;run_rosrun&apos;, { uuid, command, args}, (res) =&gt; resolve(res));
+    return new Promise((resolve) =&gt; {
+      socket.emit(&apos;run_rosrun&apos;, { uuid, command, args }, res =&gt; resolve(res));
     });
   }
 
@@ -104,9 +100,9 @@ class Rowma {
    * @return {Promise} Return a Promise with a response.
    */
   killNodes(socket, uuid, rosnodes) {
-    return new Promise((resolve, reject) =&gt; {
-      socket.emit(&apos;kill_rosnodes&apos;, { uuid, rosnodes }, (res) =&gt; resolve(res));
-    })
+    return new Promise((resolve) =&gt; {
+      socket.emit(&apos;kill_rosnodes&apos;, { uuid, rosnodes }, res =&gt; resolve(res));
+    });
   }
 
   /**
@@ -116,8 +112,8 @@ class Rowma {
    * @return {Promise} Return a Promise with a response.
    */
   registerDevice(socket, robotUuid) {
-    return new Promise((resolve, reject) =&gt; {
-      socket.emit(&apos;register_device&apos;, { deviceUuid: this.uuid, robotUuid }, (res) =&gt; resolve(res));
+    return new Promise((resolve) =&gt; {
+      socket.emit(&apos;register_device&apos;, { deviceUuid: this.uuid, robotUuid }, res =&gt; resolve(res));
     });
   }
 
@@ -129,11 +125,11 @@ class Rowma {
   connect(robotUuid) {
     return new Promise((resolve, reject) =&gt; {
       try {
-        const socket = io.connect(`${this.baseURL}/conn_device`);
-        this.registerDevice(socket, robotUuid).then(res =&gt; {
-          console.log(res)
-        }).catch(e =&gt; {
-          console.log(&apos;error&apos;, e)
+        const socket = io.connect(`${this.baseURL}/rowma`);
+        this.registerDevice(socket, robotUuid).then((res) =&gt; {
+          console.log(res);
+        }).catch((e) =&gt; {
+          console.log(&apos;error&apos;, e);
         });
 
         resolve(socket);
@@ -155,9 +151,9 @@ class Rowma {
    * @return {Promise} Return a Promise with a response.
    */
   publishTopic(socket, robotUuid, msg) {
-    return new Promise((resolve, reject) =&gt; {
-      socket.emit(&apos;delegate&apos;, { robotUuid, msg }, (res) =&gt; resolve(res));
-    })
+    return new Promise((resolve) =&gt; {
+      socket.emit(&apos;delegate&apos;, { robotUuid, msg }, res =&gt; resolve(res));
+    });
   }
 
   /**
@@ -169,15 +165,15 @@ class Rowma {
    */
   subscribeTopic(socket, robotUuid, topic) {
     // TODO: Make msg JSON string
-    const msg =  {
-      &quot;op&quot;: &quot;subscribe&quot;,
-      &quot;deviceUuid&quot;: this.uuid,
-      &quot;topic&quot;: topic
-    }
+    const msg = {
+      op: &apos;subscribe&apos;,
+      deviceUuid: this.uuid,
+      topic
+    };
 
-    return new Promise((resolve, reject) =&gt; {
-      socket.emit(&apos;delegate&apos;, { robotUuid, msg }, (res) =&gt; resolve(res));
-    })
+    return new Promise((resolve) =&gt; {
+      socket.emit(&apos;delegate&apos;, { robotUuid, msg }, res =&gt; resolve(res));
+    });
   }
 }
 

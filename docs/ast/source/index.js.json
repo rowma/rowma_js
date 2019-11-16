@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 115,
+  "end": 52,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 6,
+      "line": 4,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 115,
+    "end": 52,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 6,
+        "line": 4,
         "column": 0
       }
     },
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 39,
+        "end": 28,
         "loc": {
           "start": {
             "line": 1,
@@ -39,104 +39,35 @@
           },
           "end": {
             "line": 1,
-            "column": 39
-          }
-        },
-        "specifiers": [
-          {
-            "type": "ImportDefaultSpecifier",
-            "start": 7,
-            "end": 17,
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 7
-              },
-              "end": {
-                "line": 1,
-                "column": 17
-              }
-            },
-            "local": {
-              "type": "Identifier",
-              "start": 7,
-              "end": 17,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 7
-                },
-                "end": {
-                  "line": 1,
-                  "column": 17
-                },
-                "identifierName": "getGeohash"
-              },
-              "name": "getGeohash"
-            }
-          }
-        ],
-        "source": {
-          "type": "StringLiteral",
-          "start": 23,
-          "end": 38,
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 23
-            },
-            "end": {
-              "line": 1,
-              "column": 38
-            }
-          },
-          "extra": {
-            "rawValue": "./geolocation",
-            "raw": "'./geolocation'"
-          },
-          "value": "./geolocation"
-        }
-      },
-      {
-        "type": "ImportDeclaration",
-        "start": 40,
-        "end": 68,
-        "loc": {
-          "start": {
-            "line": 2,
-            "column": 0
-          },
-          "end": {
-            "line": 2,
             "column": 28
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 47,
-            "end": 52,
+            "start": 7,
+            "end": 12,
             "loc": {
               "start": {
-                "line": 2,
+                "line": 1,
                 "column": 7
               },
               "end": {
-                "line": 2,
+                "line": 1,
                 "column": 12
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 47,
-              "end": 52,
+              "start": 7,
+              "end": 12,
               "loc": {
                 "start": {
-                  "line": 2,
+                  "line": 1,
                   "column": 7
                 },
                 "end": {
-                  "line": 2,
+                  "line": 1,
                   "column": 12
                 },
                 "identifierName": "Rowma"
@@ -147,15 +78,15 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 58,
-          "end": 67,
+          "start": 18,
+          "end": 27,
           "loc": {
             "start": {
-              "line": 2,
+              "line": 1,
               "column": 18
             },
             "end": {
-              "line": 2,
+              "line": 1,
               "column": 27
             }
           },
@@ -168,29 +99,29 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 70,
-        "end": 91,
+        "start": 30,
+        "end": 51,
         "loc": {
           "start": {
-            "line": 4,
+            "line": 3,
             "column": 0
           },
           "end": {
-            "line": 4,
+            "line": 3,
             "column": 21
           }
         },
         "declaration": {
           "type": "Identifier",
-          "start": 85,
-          "end": 90,
+          "start": 45,
+          "end": 50,
           "loc": {
             "start": {
-              "line": 4,
+              "line": 3,
               "column": 15
             },
             "end": {
-              "line": 4,
+              "line": 3,
               "column": 20
             },
             "identifierName": "Rowma"
@@ -199,74 +130,6 @@
           "leadingComments": [],
           "trailingComments": []
         }
-      },
-      {
-        "type": "ExportNamedDeclaration",
-        "start": 92,
-        "end": 114,
-        "loc": {
-          "start": {
-            "line": 5,
-            "column": 0
-          },
-          "end": {
-            "line": 5,
-            "column": 22
-          }
-        },
-        "declaration": null,
-        "specifiers": [
-          {
-            "type": "ExportSpecifier",
-            "start": 101,
-            "end": 111,
-            "loc": {
-              "start": {
-                "line": 5,
-                "column": 9
-              },
-              "end": {
-                "line": 5,
-                "column": 19
-              }
-            },
-            "local": {
-              "type": "Identifier",
-              "start": 101,
-              "end": 111,
-              "loc": {
-                "start": {
-                  "line": 5,
-                  "column": 9
-                },
-                "end": {
-                  "line": 5,
-                  "column": 19
-                },
-                "identifierName": "getGeohash"
-              },
-              "name": "getGeohash"
-            },
-            "exported": {
-              "type": "Identifier",
-              "start": 101,
-              "end": 111,
-              "loc": {
-                "start": {
-                  "line": 5,
-                  "column": 9
-                },
-                "end": {
-                  "line": 5,
-                  "column": 19
-                },
-                "identifierName": "getGeohash"
-              },
-              "name": "getGeohash"
-            }
-          }
-        ],
-        "source": null
       }
     ],
     "directives": []
@@ -313,149 +176,16 @@
         "postfix": false,
         "binop": null
       },
-      "value": "getGeohash",
-      "start": 7,
-      "end": 17,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 7
-        },
-        "end": {
-          "line": 1,
-          "column": 17
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "from",
-      "start": 18,
-      "end": 22,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 18
-        },
-        "end": {
-          "line": 1,
-          "column": 22
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "./geolocation",
-      "start": 23,
-      "end": 38,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 23
-        },
-        "end": {
-          "line": 1,
-          "column": 38
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ";",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 38,
-      "end": 39,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 38
-        },
-        "end": {
-          "line": 1,
-          "column": 39
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "import",
-        "keyword": "import",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "import",
-      "start": 40,
-      "end": 46,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 0
-        },
-        "end": {
-          "line": 2,
-          "column": 6
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
       "value": "Rowma",
-      "start": 47,
-      "end": 52,
+      "start": 7,
+      "end": 12,
       "loc": {
         "start": {
-          "line": 2,
+          "line": 1,
           "column": 7
         },
         "end": {
-          "line": 2,
+          "line": 1,
           "column": 12
         }
       }
@@ -473,15 +203,15 @@
         "binop": null
       },
       "value": "from",
-      "start": 53,
-      "end": 57,
+      "start": 13,
+      "end": 17,
       "loc": {
         "start": {
-          "line": 2,
+          "line": 1,
           "column": 13
         },
         "end": {
-          "line": 2,
+          "line": 1,
           "column": 17
         }
       }
@@ -500,15 +230,15 @@
         "updateContext": null
       },
       "value": "./rowma",
-      "start": 58,
-      "end": 67,
+      "start": 18,
+      "end": 27,
       "loc": {
         "start": {
-          "line": 2,
+          "line": 1,
           "column": 18
         },
         "end": {
-          "line": 2,
+          "line": 1,
           "column": 27
         }
       }
@@ -526,15 +256,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 67,
-      "end": 68,
+      "start": 27,
+      "end": 28,
       "loc": {
         "start": {
-          "line": 2,
+          "line": 1,
           "column": 27
         },
         "end": {
-          "line": 2,
+          "line": 1,
           "column": 28
         }
       }
@@ -554,15 +284,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 70,
-      "end": 76,
+      "start": 30,
+      "end": 36,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 3,
           "column": 0
         },
         "end": {
-          "line": 4,
+          "line": 3,
           "column": 6
         }
       }
@@ -582,15 +312,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 77,
-      "end": 84,
+      "start": 37,
+      "end": 44,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 3,
           "column": 7
         },
         "end": {
-          "line": 4,
+          "line": 3,
           "column": 14
         }
       }
@@ -608,15 +338,15 @@
         "binop": null
       },
       "value": "Rowma",
-      "start": 85,
-      "end": 90,
+      "start": 45,
+      "end": 50,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 3,
           "column": 15
         },
         "end": {
-          "line": 4,
+          "line": 3,
           "column": 20
         }
       }
@@ -634,146 +364,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 90,
-      "end": 91,
+      "start": 50,
+      "end": 51,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 3,
           "column": 20
         },
         "end": {
-          "line": 4,
+          "line": 3,
           "column": 21
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "export",
-        "keyword": "export",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "export",
-      "start": 92,
-      "end": 98,
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 0
-        },
-        "end": {
-          "line": 5,
-          "column": 6
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "{",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 99,
-      "end": 100,
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 7
-        },
-        "end": {
-          "line": 5,
-          "column": 8
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "getGeohash",
-      "start": 101,
-      "end": 111,
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 9
-        },
-        "end": {
-          "line": 5,
-          "column": 19
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "}",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 112,
-      "end": 113,
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 20
-        },
-        "end": {
-          "line": 5,
-          "column": 21
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ";",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 113,
-      "end": 114,
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 21
-        },
-        "end": {
-          "line": 5,
-          "column": 22
         }
       }
     },
@@ -790,15 +390,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 115,
-      "end": 115,
+      "start": 52,
+      "end": 52,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 4,
           "column": 0
         },
         "end": {
-          "line": 6,
+          "line": 4,
           "column": 0
         }
       }

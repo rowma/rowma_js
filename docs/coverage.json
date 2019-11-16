@@ -1,27 +1,19 @@
 {
-  "coverage": "47.05%",
-  "expectCount": 17,
+  "coverage": "53.33%",
+  "expectCount": 15,
   "actualCount": 8,
   "files": {
-    "src/geolocation.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        4
-      ]
-    },
     "src/rowma.js": {
-      "expectCount": 16,
+      "expectCount": 15,
       "actualCount": 8,
       "undocumentLines": [
         5,
         6,
         7,
-        9,
-        10,
-        14,
-        17,
-        108
+        8,
+        12,
+        15,
+        105
       ]
     }
   }

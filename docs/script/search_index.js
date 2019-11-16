@@ -6,12 +6,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "rowma_js/src/geolocation.js~getgeohash",
-    "function/index.html#static-function-getGeohash",
-    "<span>getGeohash</span> <span class=\"search-result-import-path\">rowma_js/src/geolocation.js</span>",
-    "function"
-  ],
-  [
     "src/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "src/.external-ecmascript.js~Array",
@@ -294,12 +288,6 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/geolocation.js",
-    "file/src/geolocation.js.html",
-    "src/geolocation.js",
-    "file"
-  ],
-  [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
@@ -346,12 +334,6 @@ window.esdocSearchIndex = [
     "class/src/rowma.js~Rowma.html#instance-method-currentConnectionList",
     "src/rowma.js~Rowma#currentConnectionList",
     "method"
-  ],
-  [
-    "src/rowma.js~rowma#geocode",
-    "class/src/rowma.js~Rowma.html#instance-member-geocode",
-    "src/rowma.js~Rowma#geocode",
-    "member"
   ],
   [
     "src/rowma.js~rowma#getrobotstatus",
