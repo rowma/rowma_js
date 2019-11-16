@@ -88,7 +88,7 @@ class Rowma {
   connect(robotUuid) {
     return new Promise((resolve, reject) => {
       try {
-        const socket = io.connect(`${this.baseURL}/conn_device`);
+        const socket = io.connect(`${this.baseURL}/rowma`);
         this.registerDevice(socket, robotUuid).then((res) => {
           console.log(res);
         }).catch((e) => {
