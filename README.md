@@ -14,19 +14,35 @@ $ npm install rowma_js
 ```
 
 ## Example
+
+### Simple example
 ```nodejs
 import Rowma from 'rowma_js';
 
 const rowma = new Rowma();
-let connectionList = []
-rowma.currentConnectionList().then(res => {
-  connectionList = res.data
-})
-const connection = connectionList[0] // Choose a connection
-const uuid = connection.uuid
-const commands = connection.launchCommands
+
+const robotList = await rowma.currentConnectionList()
+const robot = connectionList[0] // Chose a connection
+
+const socket = await rowma.connect(robot)
+
+const command = 'my_utility rviz.launch'
+rowma.runLaunch(socket, robot, command)
+```
+
+#### Get commands
+```nodejs
+import Rowma from 'rowma_js';
+
+const rowma = new Rowma();
+
+const robotList = await rowma.currentConnectionList()
+const robot = connectionList[0] // Choose a connection
+
+const commands = robot.launchCommands
 const command = commands[0] // Choose a command
-rowma.runLaunch(connectionUuid, command)
+
+rowma.runLaunch(socket, robot, command)
 ```
 
 ## License
