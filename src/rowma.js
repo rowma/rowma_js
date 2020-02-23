@@ -126,20 +126,23 @@ class Rowma {
   /**
    * Subscribe a topic.
    * @param {socket} socket
-   * @param {string} RobotUUID
+   * @param {string} destuuid
+   * @param {string} destType
+   * @param {string} topicDestUuid
    * @param {string} topic
    * @return {Promise} Return a Promise with a response.
    */
-  subscribeTopic(socket, robotUuid, topic) {
-    // TODO: Make msg JSON string
+  subscribeTopic(socket, destUuid, destType, topicDestUuid, topic) {
+    const destination = { type:  destType, uuid: destUuid }
+    const topicDestination = { type: 'robot', uuid: topicDestUuid }
     const msg = {
       op: 'subscribe',
-      deviceUuid: this.uuid,
+      topicDestination,
       topic
     };
 
     return new Promise((resolve) => {
-      socket.emit('delegate', { robotUuid, msg }, res => resolve(res));
+      socket.emit('delegate', { destination, msg }, res => resolve(res));
     });
   }
 }
