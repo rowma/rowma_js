@@ -37,7 +37,8 @@ class Rowma {
    */
   runLaunch(socket, uuid, command) {
     return new Promise((resolve) => {
-      socket.emit('run_launch', { uuid, command }, res => resolve(res));
+      const destination = { type: 'robot', uuid }
+      socket.emit('run_launch', { destination, command }, res => resolve(res));
     });
   }
 
@@ -51,7 +52,8 @@ class Rowma {
    */
   runRosrun(socket, uuid, command, args) {
     return new Promise((resolve) => {
-      socket.emit('run_rosrun', { uuid, command, args }, res => resolve(res));
+      const destination = { type: 'robot', uuid }
+      socket.emit('run_rosrun', { destination, command, args }, res => resolve(res));
     });
   }
 
@@ -64,7 +66,8 @@ class Rowma {
    */
   killNodes(socket, uuid, rosnodes) {
     return new Promise((resolve) => {
-      socket.emit('kill_rosnodes', { uuid, rosnodes }, res => resolve(res));
+      const destination = { type: 'robot', uuid }
+      socket.emit('kill_rosnodes', { destination, rosnodes }, res => resolve(res));
     });
   }
 
@@ -74,9 +77,9 @@ class Rowma {
    * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a response.
    */
-  registerDevice(socket, robotUuid) {
+  registerDevice(socket) {
     return new Promise((resolve) => {
-      socket.emit('register_device', { deviceUuid: this.uuid, robotUuid }, res => resolve(res));
+      socket.emit('register_device', { deviceUuid: this.uuid }, res => resolve(res));
     });
   }
 
@@ -85,11 +88,11 @@ class Rowma {
    * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a socket for connection.
    */
-  connect(robotUuid) {
+  connect() {
     return new Promise((resolve, reject) => {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
-        this.registerDevice(socket, robotUuid).then((res) => {
+        this.registerDevice(socket).then((res) => {
           console.log(res);
         }).catch((e) => {
           console.log('error', e);
@@ -113,9 +116,10 @@ class Rowma {
    * @param {string} msg Message for topic
    * @return {Promise} Return a Promise with a response.
    */
-  publishTopic(socket, robotUuid, msg) {
+  publishTopic(socket, uuid, msg) {
     return new Promise((resolve) => {
-      socket.emit('delegate', { robotUuid, msg }, res => resolve(res));
+      const destination = { type: 'robot', uuid }
+      socket.emit('delegate', { destination, msg }, res => resolve(res));
     });
   }
 
