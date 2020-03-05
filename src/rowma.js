@@ -37,7 +37,7 @@ class Rowma {
    */
   runLaunch(socket, uuid, command) {
     return new Promise((resolve) => {
-      const destination = { type: 'robot', uuid }
+      const destination = { type: 'robot', uuid };
       socket.emit('run_launch', { destination, command }, res => resolve(res));
     });
   }
@@ -52,7 +52,7 @@ class Rowma {
    */
   runRosrun(socket, uuid, command, args) {
     return new Promise((resolve) => {
-      const destination = { type: 'robot', uuid }
+      const destination = { type: 'robot', uuid };
       socket.emit('run_rosrun', { destination, command, args }, res => resolve(res));
     });
   }
@@ -66,7 +66,7 @@ class Rowma {
    */
   killNodes(socket, uuid, rosnodes) {
     return new Promise((resolve) => {
-      const destination = { type: 'robot', uuid }
+      const destination = { type: 'robot', uuid };
       socket.emit('kill_rosnodes', { destination, rosnodes }, res => resolve(res));
     });
   }
@@ -118,7 +118,7 @@ class Rowma {
    */
   publishTopic(socket, uuid, msg) {
     return new Promise((resolve) => {
-      const destination = { type: 'robot', uuid }
+      const destination = { type: 'robot', uuid };
       socket.emit('delegate', { destination, msg }, res => resolve(res));
     });
   }
@@ -133,8 +133,8 @@ class Rowma {
    * @return {Promise} Return a Promise with a response.
    */
   subscribeTopic(socket, destUuid, destType, topicDestUuid, topic) {
-    const destination = { type:  destType, uuid: destUuid }
-    const topicDestination = { type: 'robot', uuid: topicDestUuid }
+    const destination = { type: destType, uuid: destUuid };
+    const topicDestination = { type: 'robot', uuid: topicDestUuid };
     const msg = {
       op: 'subscribe',
       topicDestination,
