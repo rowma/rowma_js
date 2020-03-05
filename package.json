@@ -1,6 +1,6 @@
 {
   "name": "rowma_js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ROS Web Manager for JS",
   "main": "./lib/index.js",
   "scripts": {
