@@ -4,12 +4,21 @@ import uuidv4 from 'uuid/v4';
 
 class Rowma {
   constructor(opts = {}) {
-    this.baseURL = opts.baseURL || 'http://18.176.1.219';
+    this.baseURL = opts.baseURL || 'https://rocky-peak-54058.herokuapp.com';
     this.client = axios.create({
       baseURL: this.baseURL,
       timeout: 1000
     });
     this.uuid = uuidv4();
+  }
+
+  /**
+   * Get information of Rowma Network.
+   * @return {Promise} Return an axios object
+   */
+  getNetworkInformation() {
+    const path = '/network_information';
+    return this.client.get(path);
   }
 
   currentConnectionList() {
