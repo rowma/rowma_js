@@ -5,10 +5,7 @@ import uuidv4 from 'uuid/v4';
 class Rowma {
   constructor(opts = {}) {
     this.baseURL = opts.baseURL || 'https://rocky-peak-54058.herokuapp.com';
-    this.client = axios.create({
-      baseURL: this.baseURL,
-      timeout: 1000
-    });
+    this.client = axios.create({ baseURL: this.baseURL });
     this.uuid = uuidv4();
   }
 
