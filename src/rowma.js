@@ -138,9 +138,9 @@ class Rowma {
    * @param {string} topic
    * @return {Promise} Return a Promise with a response.
    */
-  subscribeTopic(socket, destUuid, destType, topicDestUuid, topic) {
-    const destination = { type: destType, uuid: destUuid };
-    const topicDestination = { type: 'robot', uuid: topicDestUuid };
+  subscribeTopic(socket, destUuid, topicDestType, topicDestUuid, topic) {
+    const destination = { type: 'robot', uuid: destUuid };
+    const topicDestination = { type: topicDestType, uuid: topicDestUuid };
     const msg = {
       op: 'subscribe',
       topicDestination,
