@@ -151,6 +151,21 @@ class Rowma {
       socket.emit('delegate', { destination, msg }, res => resolve(res));
     });
   }
+
+  /**
+   * Subscribe a topic.
+   * @param {socket} socket
+   * @param {string} destuuid
+   * @param {string} topic
+   * @return {Promise} Return a Promise with a response.
+   */
+  unsubscribeTopic(socket, destUuid, topic) {
+    const destination = { type: 'robot', uuid: destUuid };
+
+    return new Promise((resolve) => {
+      socket.emit('unsubscribe_rostopic', { destination, topic }, res => resolve(res));
+    });
+  }
 }
 
 export default Rowma;
