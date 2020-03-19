@@ -91,13 +91,43 @@ class Rowma {
 
   /**
    * Connect to ConnectionManager.
-   * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a socket for connection.
    */
   connect() {
     return new Promise((resolve, reject) => {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
+        this.registerDevice(socket).then((res) => {
+          console.log(res);
+        }).catch((e) => {
+          console.log('error', e);
+        });
+
+        resolve(socket);
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
+  /**
+   * Connect to ConnectionManager with Auth information.
+   * @param {jwt} JWT token
+   * @param {networkId} Network ID
+   * @return {Promise} Return a Promise with a socket for connection.
+   */
+  connectWithAuth(jwt, networkId) {
+    return new Promise((resolve, reject) => {
+      try {
+        const socket = io.connect(`${this.baseURL}/rowma_device`, {
+          extraHeaders: {
+            Authorization: `Bearer ${jwt}`,
+            networkId: networkId
+          }
+        });
+        socket.on('unauthorized', error => {
+          throw error
+        })
         this.registerDevice(socket).then((res) => {
           console.log(res);
         }).catch((e) => {
