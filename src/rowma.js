@@ -122,12 +122,12 @@ class Rowma {
         const socket = io.connect(`${this.baseURL}/rowma_device`, {
           extraHeaders: {
             Authorization: `Bearer ${jwt}`,
-            networkId: networkId
+            networkId
           }
         });
-        socket.on('unauthorized', error => {
-          throw error
-        })
+        socket.on('unauthorized', (error) => {
+          throw error;
+        });
         this.registerDevice(socket).then((res) => {
           console.log(res);
         }).catch((e) => {
