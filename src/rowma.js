@@ -118,11 +118,14 @@ class Rowma {
    */
   connectWithAuth(jwt, networkId) {
     return new Promise((resolve, reject) => {
+      const extraHeaders = { Authorization: jwt, networkId }
       try {
         const socket = io.connect(`${this.baseURL}/rowma_device`, {
-          extraHeaders: {
-            Authorization: `Bearer ${jwt}`,
-            networkId
+          extraHeaders, // For nodejs
+          transportOptions: { // For browsers
+            polling: {
+              extraHeaders
+            }
           }
         });
         socket.on('unauthorized', (error) => {
