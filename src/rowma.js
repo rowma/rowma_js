@@ -118,7 +118,7 @@ class Rowma {
    */
   connectWithAuth(jwt, networkId) {
     return new Promise((resolve, reject) => {
-      const extraHeaders = { Authorization: jwt, networkId }
+      const extraHeaders = { Authorization: jwt, networkId };
       try {
         const socket = io.connect(`${this.baseURL}/rowma_device`, {
           extraHeaders, // For nodejs
