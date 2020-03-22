@@ -18,8 +18,13 @@ class Rowma {
     return this.client.get(path);
   }
 
-  currentConnectionList() {
-    const path = '/list_connections';
+  /**
+   * Get the connection list of Rowma Network.
+   * @param {string} networkName
+   * @return {Promise} Return an axios object
+   */
+  currentConnectionList(networkUuid = "default") {
+    const path = `/list_connections?uuid=${networkUuid}`;
     return this.client.get(path);
   }
 
