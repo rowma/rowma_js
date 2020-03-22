@@ -20,22 +20,34 @@ class Rowma {
 
   /**
    * Get the connection list of Rowma Network.
-   * @param {string} networkName
+   * @param {string} jwt
+   * @param {string} networkUuid
    * @return {Promise} Return an axios object
    */
-  currentConnectionList(networkUuid = 'default') {
+  currentConnectionList(jwt, networkUuid = 'default') {
+    const opts = {
+      headers: {
+        Authorization: jwt
+      }
+    };
     const path = `/list_connections?uuid=${networkUuid}`;
-    return this.client.get(path);
+    return this.client.get(path, opts);
   }
 
   /**
    * Get the robot status by UUID from ConnectionManager.
+   * @param {string} jwt
    * @param {string} uuid
    * @return {Promise} Return an axios object
    */
-  getRobotStatus(uuid) {
+  getRobotStatus(jwt, uuid) {
     const path = '/robots';
-    const params = { uuid };
+    const params = {
+      uuid,
+      headers: {
+        Authorization: jwt
+      }
+    };
     return this.client.get(path, { params });
   }
 
