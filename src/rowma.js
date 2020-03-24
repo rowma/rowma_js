@@ -42,13 +42,15 @@ class Rowma {
    */
   getRobotStatus(jwt, uuid) {
     const path = '/robots';
-    const params = {
-      uuid,
+    const opts = {
+      params: {
+        uuid
+      },
       headers: {
         Authorization: jwt
       }
     };
-    return this.client.get(path, { params });
+    return this.client.get(path, opts);
   }
 
   /**
