@@ -40,11 +40,12 @@ class Rowma {
    * @param {string} uuid
    * @return {Promise} Return an axios object
    */
-  getRobotStatus(jwt, uuid) {
+  getRobotStatus(jwt, uuid, networkUuid = 'default') {
     const path = '/robots';
     const opts = {
       params: {
-        uuid
+        uuid,
+        networkUuid
       },
       headers: {
         Authorization: jwt
