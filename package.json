@@ -1,7 +1,7 @@
 {
   "name": "rowma_js",
-  "version": "1.0.14",
-  "description": "ROS Web Manager for JS",
+  "version": "1.0.15",
+  "description": "Rowma SDK for JavaScript",
   "main": "./lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
