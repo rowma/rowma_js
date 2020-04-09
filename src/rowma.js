@@ -219,6 +219,25 @@ class Rowma {
       socket.emit('unsubscribe_rostopic', { destination, topic }, res => resolve(res));
     });
   }
+
+  /**
+   * Get the robot status by UUID from ConnectionManager.
+   * @param {string} jwt
+   * @param {string} uuid
+   * @return {Promise} Return an axios object
+   */
+  deleteRobot(jwt, uuid, networkUuid = 'default') {
+    const path = `/robots/${uuid}`;
+    const opts = {
+      params: {
+        networkUuid
+      },
+      headers: {
+        Authorization: jwt
+      }
+    };
+    return this.client.delete(path, opts);
+  }
 }
 
 export default Rowma;
