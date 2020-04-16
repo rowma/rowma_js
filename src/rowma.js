@@ -117,7 +117,7 @@ class Rowma {
     return new Promise((resolve, reject) => {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
-        this.registerDevice(socket, "default").then((res) => {
+        this.registerDevice(socket, 'default').then((res) => {
           console.log(res);
         }).catch((e) => {
           console.log('error', e);
