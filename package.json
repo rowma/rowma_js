@@ -1,6 +1,6 @@
 {
   "name": "rowma_js",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Rowma SDK for JavaScript",
   "main": "./lib/index.js",
   "scripts": {
