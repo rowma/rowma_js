@@ -100,24 +100,25 @@ class Rowma {
   /**
    * Match the UUID of a device client and a UUID of the robot on ConnectionManager.
    * @param {socket} socket
-   * @param {string} NetworkUUID
+   * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a response.
    */
-  registerDevice(socket, networkUuid) {
+  registerDevice(socket, robotUuid) {
     return new Promise((resolve) => {
-      socket.emit('register_device', { deviceUuid: this.uuid, networkUuid }, res => resolve(res));
+      socket.emit('register_device', { deviceUuid: this.uuid, robotUuid }, res => resolve(res));
     });
   }
 
   /**
    * Connect to ConnectionManager.
+   * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a socket for connection.
    */
-  connect() {
+  connect(robotUuid) {
     return new Promise((resolve, reject) => {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
-        this.registerDevice(socket, 'default').then((res) => {
+        this.registerDevice(socket, robotUuid).then((res) => {
           console.log(res);
         }).catch((e) => {
           console.log('error', e);
@@ -136,7 +137,7 @@ class Rowma {
    * @param {networkId} Network ID
    * @return {Promise} Return a Promise with a socket for connection.
    */
-  connectWithAuth(jwt, networkUuid) {
+  connectWithAuth(jwt, networkUuid, robotUuid) {
     return new Promise((resolve, reject) => {
       const extraHeaders = { Authorization: jwt, networkUuid };
       try {
@@ -151,7 +152,7 @@ class Rowma {
         socket.on('unauthorized', (error) => {
           throw error;
         });
-        this.registerDevice(socket, networkUuid).then((res) => {
+        this.registerDevice(socket, robotUuid).then((res) => {
           console.log(res);
         }).catch((e) => {
           console.log('error', e);
