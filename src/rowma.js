@@ -100,12 +100,12 @@ class Rowma {
   /**
    * Match the UUID of a device client and a UUID of the robot on ConnectionManager.
    * @param {socket} socket
-   * @param {string} RobotUUID
+   * @param {string} NetworkUUID
    * @return {Promise} Return a Promise with a response.
    */
-  registerDevice(socket) {
+  registerDevice(socket, networkUuid) {
     return new Promise((resolve) => {
-      socket.emit('register_device', { deviceUuid: this.uuid }, res => resolve(res));
+      socket.emit('register_device', { deviceUuid: this.uuid, networkUuid }, res => resolve(res));
     });
   }
 
@@ -117,7 +117,7 @@ class Rowma {
     return new Promise((resolve, reject) => {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
-        this.registerDevice(socket).then((res) => {
+        this.registerDevice(socket, "default").then((res) => {
           console.log(res);
         }).catch((e) => {
           console.log('error', e);
@@ -151,7 +151,7 @@ class Rowma {
         socket.on('unauthorized', (error) => {
           throw error;
         });
-        this.registerDevice(socket).then((res) => {
+        this.registerDevice(socket, networkUuid).then((res) => {
           console.log(res);
         }).catch((e) => {
           console.log('error', e);
