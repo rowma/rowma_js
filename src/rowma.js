@@ -239,6 +239,22 @@ class Rowma {
     };
     return this.client.delete(path, opts);
   }
+
+  /**
+   * Add a script to the specified robot.
+   * @param {socket} socket
+   * @param {string} robotUuid
+   * @param {string} name
+   * @param {string} script
+   * @return {Promise} Return a Promise with a response.
+   */
+  addScript(socket, robotUuid, name, script) {
+    const destination = { type: 'robot', uuid: destUuid };
+
+    return new Promise((resolve) => {
+      socket.emit('add_script', { robotUuid, name, script }, res => resolve(res));
+    });
+  }
 }
 
 export default Rowma;
