@@ -24,7 +24,7 @@ class Rowma {
    * @param {string} networkUuid
    * @return {Promise} Return an axios object
    */
-  currentConnectionList(jwt, networkUuid = 'default') {
+  currentConnectionList(networkUuid = 'default', jwt= '') {
     const opts = {
       headers: {
         Authorization: jwt
@@ -40,7 +40,7 @@ class Rowma {
    * @param {string} uuid
    * @return {Promise} Return an axios object
    */
-  getRobotStatus(jwt, uuid, networkUuid = 'default') {
+  getRobotStatus(uuid, networkUuid = 'default', jwt = '') {
     const path = '/robots';
     const opts = {
       params: {
@@ -137,7 +137,7 @@ class Rowma {
    * @param {networkId} Network ID
    * @return {Promise} Return a Promise with a socket for connection.
    */
-  connectWithAuth(jwt, networkUuid, robotUuid) {
+  connectWithAuth(networkUuid, robotUuid, jwt = '') {
     return new Promise((resolve, reject) => {
       const extraHeaders = { Authorization: jwt, networkUuid };
       try {
@@ -227,7 +227,7 @@ class Rowma {
    * @param {string} uuid
    * @return {Promise} Return an axios object
    */
-  deleteRobot(jwt, uuid, networkUuid = 'default') {
+  deleteRobot(uuid, networkUuid = 'default', jwt = '') {
     const path = `/robots/${uuid}`;
     const opts = {
       params: {
