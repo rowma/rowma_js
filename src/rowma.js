@@ -24,7 +24,7 @@ class Rowma {
    * @param {string} networkUuid
    * @return {Promise} Return an axios object
    */
-  currentConnectionList(networkUuid = 'default', jwt= '') {
+  currentConnectionList(networkUuid = 'default', jwt = '') {
     const opts = {
       headers: {
         Authorization: jwt
