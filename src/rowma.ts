@@ -1,10 +1,25 @@
-import axios from 'axios';
-import io from 'socket.io-client';
-import uuidv4 from 'uuid/v4';
+import axios, { AxiosInstance } from "axios";
+import * as io from 'socket.io-client';
+import * as uuidv4 from 'uuid/v4';
+
+interface RowmaOptionsInterface {
+  baseURL?: string;
+}
+
+// This interface is defined at rowma/rowma/src/entity/response.ts
+interface ResponseInterface {
+  status: string;
+  data: string;
+  error: string;
+}
 
 class Rowma {
-  constructor(opts = {}) {
-    this.baseURL = opts.baseURL || 'https://rocky-peak-54058.herokuapp.com';
+  baseURL: string;
+  client: AxiosInstance;
+  uuid: string;
+
+  constructor(opts: RowmaOptionsInterface = {}) {
+    this.baseURL = opts.baseURL || 'https://rowma.moriokalab.com';
     this.client = axios.create({ baseURL: this.baseURL });
     this.uuid = uuidv4();
   }
@@ -40,7 +55,7 @@ class Rowma {
    * @param {string} uuid
    * @return {Promise} Return an axios object
    */
-  getRobotStatus(uuid, networkUuid = 'default', jwt = '') {
+  getRobotStatus(uuid: string, networkUuid = 'default', jwt = '') {
     const path = '/robots';
     const opts = {
       params: {
@@ -61,10 +76,10 @@ class Rowma {
    * @param {string} command
    * @return {Promise} Return a Promise with a response.
    */
-  runLaunch(socket, uuid, command) {
+  runLaunch(socket: SocketIOClient.Socket, uuid: string, command: string) {
     return new Promise((resolve) => {
       const destination = { type: 'robot', uuid };
-      socket.emit('run_launch', { destination, command }, res => resolve(res));
+      socket.emit('run_launch', { destination, command }, (res: ResponseInterface) => resolve(res));
     });
   }
 
@@ -76,10 +91,10 @@ class Rowma {
    * @param {string} args Command arguments for the rosrun command.
    * @return {Promise} Return a Promise with a response.
    */
-  runRosrun(socket, uuid, command, args) {
+  runRosrun(socket: SocketIOClient.Socket, uuid: string, command: string, args: string) {
     return new Promise((resolve) => {
       const destination = { type: 'robot', uuid };
-      socket.emit('run_rosrun', { destination, command, args }, res => resolve(res));
+      socket.emit('run_rosrun', { destination, command, args }, (res: ResponseInterface) => resolve(res));
     });
   }
 
@@ -90,10 +105,10 @@ class Rowma {
    * @param {Array<string>} rosnodes
    * @return {Promise} Return a Promise with a response.
    */
-  killNodes(socket, uuid, rosnodes) {
+  killNodes(socket: SocketIOClient.Socket, uuid: string, rosnodes: Array<string>) {
     return new Promise((resolve) => {
       const destination = { type: 'robot', uuid };
-      socket.emit('kill_rosnodes', { destination, rosnodes }, res => resolve(res));
+      socket.emit('kill_rosnodes', { destination, rosnodes }, (res: ResponseInterface) => resolve(res));
     });
   }
 
@@ -103,9 +118,9 @@ class Rowma {
    * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a response.
    */
-  registerDevice(socket, robotUuid) {
+  registerDevice(socket: SocketIOClient.Socket, robotUuid: string) {
     return new Promise((resolve) => {
-      socket.emit('register_device', { deviceUuid: this.uuid, robotUuid }, res => resolve(res));
+      socket.emit('register_device', { deviceUuid: this.uuid, robotUuid }, (res: ResponseInterface) => resolve(res));
     });
   }
 
@@ -114,7 +129,7 @@ class Rowma {
    * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a socket for connection.
    */
-  connect(robotUuid) {
+  connect(robotUuid: string) {
     return new Promise((resolve, reject) => {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
@@ -137,11 +152,12 @@ class Rowma {
    * @param {networkId} Network ID
    * @return {Promise} Return a Promise with a socket for connection.
    */
-  connectWithAuth(networkUuid, robotUuid, jwt = '') {
+  connectWithAuth(networkUuid: string, robotUuid: string, jwt = '') {
     return new Promise((resolve, reject) => {
       const extraHeaders = { Authorization: jwt, networkUuid };
       try {
         const socket = io.connect(`${this.baseURL}/rowma_device`, {
+          // @ts-ignore
           extraHeaders, // For nodejs
           transportOptions: { // For browsers
             polling: {
@@ -149,7 +165,7 @@ class Rowma {
             }
           }
         });
-        socket.on('unauthorized', (error) => {
+        socket.on('unauthorized', (error: string) => {
           throw error;
         });
         this.registerDevice(socket, robotUuid).then((res) => {
@@ -165,7 +181,7 @@ class Rowma {
     });
   }
 
-  close(socket) {
+  close(socket: SocketIOClient.Socket) {
     socket.close();
   }
 
@@ -176,10 +192,10 @@ class Rowma {
    * @param {string} msg Message for topic
    * @return {Promise} Return a Promise with a response.
    */
-  publishTopic(socket, uuid, msg) {
+  publishTopic(socket: SocketIOClient.Socket, uuid: string, msg: string) {
     return new Promise((resolve) => {
       const destination = { type: 'robot', uuid };
-      socket.emit('delegate', { destination, msg }, res => resolve(res));
+      socket.emit('delegate', { destination, msg }, (res: ResponseInterface) => resolve(res));
     });
   }
 
@@ -192,7 +208,7 @@ class Rowma {
    * @param {string} topic
    * @return {Promise} Return a Promise with a response.
    */
-  subscribeTopic(socket, destUuid, topicDestType, topicDestUuid, topic) {
+  subscribeTopic(socket: SocketIOClient.Socket, destUuid: string, topicDestType: string, topicDestUuid: string, topic: string) {
     const destination = { type: 'robot', uuid: destUuid };
     const topicDestination = { type: topicDestType, uuid: topicDestUuid };
     const msg = {
@@ -202,7 +218,7 @@ class Rowma {
     };
 
     return new Promise((resolve) => {
-      socket.emit('delegate', { destination, msg }, res => resolve(res));
+      socket.emit('delegate', { destination, msg }, (res: ResponseInterface) => resolve(res));
     });
   }
 
@@ -213,11 +229,11 @@ class Rowma {
    * @param {string} topic
    * @return {Promise} Return a Promise with a response.
    */
-  unsubscribeTopic(socket, destUuid, topic) {
+  unsubscribeTopic(socket: SocketIOClient.Socket, destUuid: string, topic: string) {
     const destination = { type: 'robot', uuid: destUuid };
 
     return new Promise((resolve) => {
-      socket.emit('unsubscribe_rostopic', { destination, topic }, res => resolve(res));
+      socket.emit('unsubscribe_rostopic', { destination, topic }, (res: ResponseInterface) => resolve(res));
     });
   }
 
@@ -227,7 +243,7 @@ class Rowma {
    * @param {string} uuid
    * @return {Promise} Return an axios object
    */
-  deleteRobot(uuid, networkUuid = 'default', jwt = '') {
+  deleteRobot(uuid: string, networkUuid = 'default', jwt = '') {
     const path = `/robots/${uuid}`;
     const opts = {
       params: {
@@ -248,10 +264,10 @@ class Rowma {
    * @param {string} script
    * @return {Promise} Return a Promise with a response.
    */
-  addScript(socket, uuid, name, script) {
+  addScript(socket: SocketIOClient.Socket, uuid: string, name: string, script: string) {
     return new Promise((resolve) => {
       const destination = { type: 'robot', uuid };
-      socket.emit('add_script', { destination, name, script }, res => resolve(res));
+      socket.emit('add_script', { destination, name, script }, (res: ResponseInterface) => resolve(res));
     });
   }
 }
