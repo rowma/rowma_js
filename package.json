@@ -18,8 +18,7 @@
     "esdoc": "esdoc"
   },
   "files": [
-    "lib",
-    "src"
+    "dist"
   ],
   "repository": {
     "type": "git",
