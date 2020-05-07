@@ -1,3 +1,3 @@
-import Rowma from './rowma';
+import Rowma from "./rowma";
 
 export default Rowma;
