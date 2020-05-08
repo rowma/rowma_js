@@ -13,17 +13,27 @@ interface ResponseInterface {
   error: string;
 }
 
+// I do not want to run Socket initialization at constructor() because there are two kind of sockets,
+// the one is for a public network, and another is for a private network with authentication.
+class MockSocket {
+  constructor() {}
+  on() {}
+  emit() {}
+  close() {}
+}
+
 class Rowma {
   baseURL: string;
-  socket: SocketIOClient.Socket;
   uuid: string;
 
   private client: AxiosInstance;
+  private socket: SocketIOClient.Socket | MockSocket;
 
   constructor(opts: RowmaOptionsInterface = {}) {
     this.baseURL = opts.baseURL || "https://rowma.moriokalab.com";
-    this.client = axios.create({ baseURL: this.baseURL });
     this.uuid = uuidv4();
+    this.client = axios.create({ baseURL: this.baseURL });
+    this.socket = new MockSocket();
   }
 
   /**
@@ -154,13 +164,13 @@ class Rowma {
     return new Promise((resolve, reject) => {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
-        this.registerDevice(socket, robotUuid).catch((e) => {
+        this.registerDevice(robotUuid).catch((e) => {
           // eslint-disable-next-line no-console
           console.error("error", e);
         });
 
         this.socket = socket;
-        resolve();
+        resolve(socket);
       } catch (e) {
         reject(e);
       }
@@ -191,7 +201,7 @@ class Rowma {
         socket.on("unauthorized", (error: string) => {
           throw error;
         });
-        this.registerDevice(socket, robotUuid).catch((e) => {
+        this.registerDevice(robotUuid).catch((e) => {
           // eslint-disable-next-line no-console
           console.error("error", e);
         });
@@ -204,6 +214,10 @@ class Rowma {
     });
   }
 
+  /**
+   * Close current WebSocket connection.
+   * @return {void}
+   */
   close() {
     this.socket.close();
   }
@@ -312,6 +326,15 @@ class Rowma {
         (res: ResponseInterface) => resolve(res)
       );
     });
+  }
+
+  /**
+   * Add an event listener for arriving topics
+   * @param {Function} eventHandler
+   * @return {void}
+   */
+  topicListener(eventHandler: Function): void {
+    this.socket.on('topic_to_device', eventHandler)
   }
 }
 
