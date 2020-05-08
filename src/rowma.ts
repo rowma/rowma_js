@@ -164,13 +164,13 @@ class Rowma {
     return new Promise((resolve, reject) => {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
+        this.socket = socket;
         this.registerDevice(robotUuid).catch((e) => {
           // eslint-disable-next-line no-console
           console.error("error", e);
         });
 
-        this.socket = socket;
-        resolve(socket);
+        resolve();
       } catch (e) {
         reject(e);
       }
@@ -201,12 +201,12 @@ class Rowma {
         socket.on("unauthorized", (error: string) => {
           throw error;
         });
+        this.socket = socket;
         this.registerDevice(robotUuid).catch((e) => {
           // eslint-disable-next-line no-console
           console.error("error", e);
         });
 
-        this.socket = socket;
         resolve();
       } catch (e) {
         reject(e);
