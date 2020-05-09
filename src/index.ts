@@ -1,10 +1,4 @@
-import Rowma from "./rowma";
+import Rowma, { Topic } from "./rowma";
 
-export interface Topic {
-  msg: any;
-  op: string;
-  sourceUuid: string;
-  topic: string;
-}
-
+export { Topic };
 export default Rowma;

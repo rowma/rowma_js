@@ -13,6 +13,13 @@ interface ResponseInterface {
   error: string;
 }
 
+interface Topic {
+  msg: any;
+  op: string;
+  sourceUuid: string;
+  topic: string;
+}
+
 // I do not want to run Socket initialization at constructor() because there are two kind of sockets,
 // the one is for a public network, and another is for a private network with authentication.
 class MockSocket {
@@ -33,12 +40,15 @@ class Rowma {
 
   private client: AxiosInstance;
   private socket: SocketIOClient.Socket | MockSocket;
+  private handlers: any;
 
   constructor(opts: RowmaOptionsInterface = {}) {
     this.baseURL = opts.baseURL || "https://rowma.moriokalab.com";
     this.uuid = uuidv4();
     this.client = axios.create({ baseURL: this.baseURL });
     this.socket = new MockSocket();
+    this.handlers = {}
+    this.baseHandler = this.baseHandler.bind(this)
   }
 
   /**
@@ -168,6 +178,7 @@ class Rowma {
           console.error("error", e);
         });
 
+        this.socket.on("topic_to_device", this.baseHandler);
         resolve();
       } catch (e) {
         reject(e);
@@ -245,7 +256,7 @@ class Rowma {
    * @param {string} topic
    * @return {Promise} Return a Promise with a response.
    */
-  subscribeTopic(
+  setTopicRoute(
     destUuid: string,
     topicDestType: string,
     topicDestUuid: string,
@@ -324,13 +335,23 @@ class Rowma {
   }
 
   /**
-   * Add an event listener for arriving topics
-   * @param {Function} eventHandler
+   * Subscribe a topic
+   * @param {string} topic
+   * @param {Function} handler
    * @return {void}
    */
-  topicListener(eventHandler: Function): void {
-    this.socket.on("topic_to_device", eventHandler);
+  subscribe(topic: string, handler: Function): void {
+    this.handlers[topic] = handler;
+    console.log(this.handlers)
+  }
+
+  private baseHandler(topic: Topic): void {
+    const handler = this.handlers[topic.topic]
+    if (handler) {
+      handler(topic)
+    }
   }
 }
 
+export { Topic };
 export default Rowma;
