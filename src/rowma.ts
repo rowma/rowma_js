@@ -47,8 +47,8 @@ class Rowma {
     this.uuid = uuidv4();
     this.client = axios.create({ baseURL: this.baseURL });
     this.socket = new MockSocket();
-    this.handlers = {}
-    this.baseHandler = this.baseHandler.bind(this)
+    this.handlers = {};
+    this.baseHandler = this.baseHandler.bind(this);
   }
 
   /**
@@ -342,13 +342,12 @@ class Rowma {
    */
   subscribe(topic: string, handler: Function): void {
     this.handlers[topic] = handler;
-    console.log(this.handlers)
   }
 
   private baseHandler(topic: Topic): void {
-    const handler = this.handlers[topic.topic]
+    const handler = this.handlers[topic.topic];
     if (handler) {
-      handler(topic)
+      handler(topic);
     }
   }
 }
