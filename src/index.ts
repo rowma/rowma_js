@@ -1,7 +1,7 @@
 import Rowma from "./rowma";
 
 export interface Topic {
-  msg: Object;
+  msg: any;
   op: string;
   sourceUuid: string;
   topic: string;

@@ -16,10 +16,15 @@ interface ResponseInterface {
 // I do not want to run Socket initialization at constructor() because there are two kind of sockets,
 // the one is for a public network, and another is for a private network with authentication.
 class MockSocket {
-  constructor() {}
-  on() {}
-  emit() {}
-  close() {}
+  on() {
+    return null;
+  }
+  emit() {
+    return null;
+  }
+  close() {
+    return null;
+  }
 }
 
 class Rowma {
@@ -105,11 +110,7 @@ class Rowma {
    * @param {string} args Command arguments for the rosrun command.
    * @return {Promise} Return a Promise with a response.
    */
-  runRosrun(
-    uuid: string,
-    command: string,
-    args: string
-  ) {
+  runRosrun(uuid: string, command: string, args: string) {
     return new Promise((resolve) => {
       const destination = { type: "robot", uuid };
       this.socket.emit(
@@ -126,10 +127,7 @@ class Rowma {
    * @param {Array<string>} rosnodes
    * @return {Promise} Return a Promise with a response.
    */
-  killNodes(
-    uuid: string,
-    rosnodes: Array<string>
-  ) {
+  killNodes(uuid: string, rosnodes: Array<string>) {
     return new Promise((resolve) => {
       const destination = { type: "robot", uuid };
       this.socket.emit(
@@ -231,8 +229,10 @@ class Rowma {
   publishTopic(uuid: string, msg: string) {
     return new Promise((resolve) => {
       const destination = { type: "robot", uuid };
-      this.socket.emit("delegate", { destination, msg }, (res: ResponseInterface) =>
-        resolve(res)
+      this.socket.emit(
+        "delegate",
+        { destination, msg },
+        (res: ResponseInterface) => resolve(res)
       );
     });
   }
@@ -260,8 +260,10 @@ class Rowma {
     };
 
     return new Promise((resolve) => {
-      this.socket.emit("delegate", { destination, msg }, (res: ResponseInterface) =>
-        resolve(res)
+      this.socket.emit(
+        "delegate",
+        { destination, msg },
+        (res: ResponseInterface) => resolve(res)
       );
     });
   }
@@ -272,10 +274,7 @@ class Rowma {
    * @param {string} topic
    * @return {Promise} Return a Promise with a response.
    */
-  unsubscribeTopic(
-    destUuid: string,
-    topic: string
-  ) {
+  unsubscribeTopic(destUuid: string, topic: string) {
     const destination = { type: "robot", uuid: destUuid };
 
     return new Promise((resolve) => {
@@ -313,11 +312,7 @@ class Rowma {
    * @param {string} script
    * @return {Promise} Return a Promise with a response.
    */
-  addScript(
-    uuid: string,
-    name: string,
-    script: string
-  ) {
+  addScript(uuid: string, name: string, script: string) {
     return new Promise((resolve) => {
       const destination = { type: "robot", uuid };
       this.socket.emit(
@@ -334,7 +329,7 @@ class Rowma {
    * @return {void}
    */
   topicListener(eventHandler: Function): void {
-    this.socket.on('topic_to_device', eventHandler)
+    this.socket.on("topic_to_device", eventHandler);
   }
 }
 
