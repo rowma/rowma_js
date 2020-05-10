@@ -153,11 +153,11 @@ class Rowma {
    * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a response.
    */
-  registerDevice(robotUuid: string) {
+  registerDevice() {
     return new Promise((resolve) => {
       this.socket.emit(
         "register_device",
-        { deviceUuid: this.uuid, robotUuid },
+        { deviceUuid: this.uuid },
         (res: ResponseInterface) => resolve(res)
       );
     });
@@ -168,12 +168,12 @@ class Rowma {
    * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a socket for connection.
    */
-  connect(robotUuid: string) {
+  connect() {
     return new Promise((resolve, reject) => {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
         this.socket = socket;
-        this.registerDevice(robotUuid).catch((e) => {
+        this.registerDevice().catch((e) => {
           // eslint-disable-next-line no-console
           console.error("error", e);
         });
@@ -192,7 +192,7 @@ class Rowma {
    * @param {networkId} Network ID
    * @return {Promise} Return a Promise with a socket for connection.
    */
-  connectWithAuth(networkUuid: string, robotUuid: string, jwt = "") {
+  connectWithAuth(networkUuid: string, jwt = "") {
     return new Promise((resolve, reject) => {
       const extraHeaders = { Authorization: jwt, networkUuid };
       try {
@@ -211,7 +211,7 @@ class Rowma {
           throw error;
         });
         this.socket = socket;
-        this.registerDevice(robotUuid).catch((e) => {
+        this.registerDevice().catch((e) => {
           // eslint-disable-next-line no-console
           console.error("error", e);
         });
@@ -342,6 +342,22 @@ class Rowma {
    */
   subscribe(topic: string, handler: Function): void {
     this.handlers[topic] = handler;
+  }
+
+  /**
+   * Match the UUID of a device client and a UUID of the robot on ConnectionManager.
+   * @param {string} UUID
+   * @param {string} RobotUUID
+   * @return {Promise} Return a Promise with a response.
+   */
+  setRobotUuid(robotUuid: string) {
+    return new Promise((resolve) => {
+      this.socket.emit(
+        "update_application",
+        { uuid: this.uuid, robotUuid },
+        (res: ResponseInterface) => resolve(res)
+      );
+    });
   }
 
   private baseHandler(topic: Topic): void {
