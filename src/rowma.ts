@@ -241,7 +241,7 @@ class Rowma {
     return new Promise((resolve) => {
       const destination = { type: "robot", uuid };
       this.socket.emit(
-        "delegate",
+        "topic_transfer",
         { destination, msg },
         (res: ResponseInterface) => resolve(res)
       );
@@ -272,7 +272,7 @@ class Rowma {
 
     return new Promise((resolve) => {
       this.socket.emit(
-        "delegate",
+        "topic_transfer",
         { destination, msg },
         (res: ResponseInterface) => resolve(res)
       );
