@@ -149,15 +149,15 @@ class Rowma {
   }
 
   /**
-   * Match the UUID of a device client and a UUID of the robot on ConnectionManager.
+   * Match the UUID of a application client and a UUID of the robot on ConnectionManager.
    * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a response.
    */
-  registerDevice() {
+  registerApplication() {
     return new Promise((resolve) => {
       this.socket.emit(
-        "register_device",
-        { deviceUuid: this.uuid },
+        "register_application",
+        { applicationUuid: this.uuid },
         (res: ResponseInterface) => resolve(res)
       );
     });
@@ -173,12 +173,12 @@ class Rowma {
       try {
         const socket = io.connect(`${this.baseURL}/rowma`);
         this.socket = socket;
-        this.registerDevice().catch((e) => {
+        this.registerApplication().catch((e) => {
           // eslint-disable-next-line no-console
           console.error("error", e);
         });
 
-        this.socket.on("topic_to_device", this.baseHandler);
+        this.socket.on("topic_to_application", this.baseHandler);
         resolve();
       } catch (e) {
         reject(e);
@@ -196,7 +196,7 @@ class Rowma {
     return new Promise((resolve, reject) => {
       const extraHeaders = { Authorization: jwt, networkUuid };
       try {
-        const socket = io.connect(`${this.baseURL}/rowma_device`, {
+        const socket = io.connect(`${this.baseURL}/rowma_application`, {
           // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
           extraHeaders, // For nodejs
@@ -211,7 +211,7 @@ class Rowma {
           throw error;
         });
         this.socket = socket;
-        this.registerDevice().catch((e) => {
+        this.registerApplication().catch((e) => {
           // eslint-disable-next-line no-console
           console.error("error", e);
         });
@@ -345,7 +345,7 @@ class Rowma {
   }
 
   /**
-   * Match the UUID of a device client and a UUID of the robot on ConnectionManager.
+   * Match the UUID of a application client and a UUID of the robot on ConnectionManager.
    * @param {string} UUID
    * @param {string} RobotUUID
    * @return {Promise} Return a Promise with a response.
