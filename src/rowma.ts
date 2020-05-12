@@ -234,15 +234,21 @@ class Rowma {
   /**
    * Publish a topic which runs on the specified robot.
    * @param {string} RobotUUID
+   * @param {topic} topic name
    * @param {string} msg Message for topic
    * @return {Promise} Return a Promise with a response.
    */
-  publishTopic(uuid: string, msg: string) {
+  publish(uuid: string, topic: string, msg: string) {
     return new Promise((resolve) => {
+      const topicMessage = {
+        op: "publish",
+        topic,
+        msg
+      }
       const destination = { type: "robot", uuid };
       this.socket.emit(
         "topic_transfer",
-        { destination, msg },
+        { destination, msg: topicMessage },
         (res: ResponseInterface) => resolve(res)
       );
     });
