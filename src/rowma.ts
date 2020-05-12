@@ -243,8 +243,8 @@ class Rowma {
       const topicMessage = {
         op: "publish",
         topic,
-        msg
-      }
+        msg,
+      };
       const destination = { type: "robot", uuid };
       this.socket.emit(
         "topic_transfer",
