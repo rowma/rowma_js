@@ -266,15 +266,17 @@ class Rowma {
     destUuid: string,
     topicDestType: string,
     topicDestUuid: string,
-    topic: string
+    topic: string,
+    alias?: string
   ) {
     const destination = { type: "robot", uuid: destUuid };
     const topicDestination = { type: topicDestType, uuid: topicDestUuid };
-    const msg = {
+    const payload = {
       op: "subscribe",
       topicDestination,
       topic,
     };
+    const msg = alias ? Object.assign(payload, { alias }) : payload;
 
     return new Promise((resolve) => {
       this.socket.emit(
