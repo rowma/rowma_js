@@ -1,6 +1,7 @@
 import axios, { AxiosInstance } from "axios";
 import * as io from "socket.io-client";
-import { v4 as uuidv4 } from 'uuid';
+import * as uuid from "uuid";
+const { v4 } = uuid
 
 interface RowmaOptionsInterface {
   baseURL?: string;
@@ -44,7 +45,7 @@ class Rowma {
 
   constructor(opts: RowmaOptionsInterface = {}) {
     this.baseURL = opts.baseURL || "https://rowma.moriokalab.com";
-    this.uuid = uuidv4();
+    this.uuid = v4();
     this.client = axios.create({ baseURL: this.baseURL });
     this.socket = new MockSocket();
     this.handlers = {};
