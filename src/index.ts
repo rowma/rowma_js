@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import * as io from "socket.io-client";
-import * as uuidv4 from "uuid/v4";
+import { v4 as uuidv4 } from 'uuid';
 
 interface RowmaOptionsInterface {
   baseURL?: string;
