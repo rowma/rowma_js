@@ -1,6 +1,6 @@
 {
   "name": "rowma_js",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "Rowma SDK for JavaScript/Typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,21 +22,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asmsuechan/rowma.git"
+    "url": "git+https://github.com/rowma/rowma.git"
   },
-  "keywords": [
-    "boilerplate",
-    "npm",
-    "module",
-    "node",
-    "javascript"
-  ],
   "author": "asmsuechan <suenagaryoutaabc@gmail.com>",
   "license": "mit",
   "bugs": {
-    "url": "https://github.com/asmsuechan/rowma/issues"
+    "url": "https://github.com/rowma/rowma/issues"
   },
-  "homepage": "https://github.com/asmsuechan/rowma",
+  "homepage": "https://github.com/rowma/rowma",
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/socket.io": "^2.1.4",
