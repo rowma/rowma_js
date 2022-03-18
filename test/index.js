@@ -1,10 +1,8 @@
-// import { assert } from 'chai';
-// import Lorma from '../src';
-//
-// describe('test.', () => {
-//  it('should test default Lorma class', () => {
-//  });
-//
-//  it('should test awesome function', () => {
-//  });
+// import { assert, describe, it } from "chai";
+// import Rowma from "../src";
+
+// describe("test.", () => {
+//   it("should test default Rowma class", () => {
+//     const rowma = new Rowma();
+//   });
 // });

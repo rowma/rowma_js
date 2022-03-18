@@ -1,6 +1,6 @@
 {
   "name": "rowma_js",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Rowma SDK for JavaScript/Typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -66,10 +66,11 @@
     "nyc": "^13.3.0",
     "prettier": "^2.0.5",
     "rimraf": "^2.6.2",
+    "socket.io-parser": "^4.1.2",
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.26.1",
     "socket.io-client": "^2.2.0",
     "uuid": "^3.3.3"
   }
