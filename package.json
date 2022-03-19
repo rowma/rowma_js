@@ -1,9 +1,10 @@
 {
   "name": "rowma_js",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "Rowma SDK for JavaScript/Typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "clean": "rimraf lib",
     "test": "mocha --require ts-node/esm --watch-extensions ts 'test/**/*.ts'",
