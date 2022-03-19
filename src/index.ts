@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from "axios";
 import * as io from "socket.io-client";
 import * as uuid from "uuid";
-const { v4 } = uuid
+const { v4 } = uuid;
 
 interface RowmaOptionsInterface {
   baseURL?: string;
@@ -22,7 +22,7 @@ interface Topic {
 }
 
 // I do not want to run Socket initialization at constructor() because there are two kind of sockets,
-// the one is for a public network, and another is for a private network with authentication.
+// the one is for a public network, and the another is for a private network with authentication.
 class MockSocket {
   on() {
     return null;
@@ -180,7 +180,7 @@ class Rowma {
         });
 
         this.socket.on("topic_to_application", this.baseHandler);
-        resolve();
+        resolve(null);
       } catch (e) {
         reject(e);
       }
@@ -217,7 +217,7 @@ class Rowma {
           console.error("error", e);
         });
 
-        resolve();
+        resolve(null);
       } catch (e) {
         reject(e);
       }
